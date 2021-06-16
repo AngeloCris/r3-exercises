@@ -2,4 +2,8 @@
 title: "Welcome"
 ---
 
+<<<<<<< HEAD
 Hello, Rstudio!
+=======
+Hello, Github!
+>>>>>>> 2a3329b1163e78fdceae3a2c05d4e025f5a0e74d
