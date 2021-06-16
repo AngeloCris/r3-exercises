@@ -3,4 +3,10 @@ title: "Collaborate"
 ---
 
 Like branches of a tree.
+<<<<<<< HEAD
 
+=======
+My first try 
+
+# Hello everyone
+>>>>>>> rmd-website
