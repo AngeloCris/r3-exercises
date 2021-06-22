@@ -14,7 +14,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
-## Read online table
+## Read online tables
 
 ### Dowload table (`*.csv`)
 
@@ -27,7 +27,7 @@ dir_data <- "data"
 csv <- file.path(dir_data, basename(csv_url))
 
 # create directory
-dir.create(dir_data)
+#dir.create(dir_data)
 
 # dowload file
 #download.file(csv_url, csv)
