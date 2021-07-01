@@ -2,7 +2,12 @@
 title: "Visualize"
 author: "Angelo AC"
 date: "01-07-2021"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: "show"
 ---
 
 ```{r setup, include=FALSE}
@@ -137,14 +142,14 @@ p_rgn <-
 p_rgn
 ```
 
-# 3.2.6 Multiple plots with `facet_wrap`
+## 3.2.6 Multiple plots with `facet_wrap`
 
 ```{r}
 p_rgn +
   facet_wrap(vars(region))
 ```
 
-# 3.2.7 Bar plot `+ geom_col()`
+## 3.2.7 Bar plot `+ geom_col()`
 
 ```{r}
 library(glue)
@@ -166,7 +171,7 @@ d_rgn %>%
                  fill = "Región")
 ```
 
-# 3.2.8 Variation of series with `+ geom_boxplot()`
+## 3.2.8 Variation of series with `+ geom_boxplot()`
 
 ```{r}
 d_rgn %>% 
@@ -184,7 +189,7 @@ d_rgn %>%
     legend.position = "none")
 ```
 
-# 3.2.9 Variation of series with `geom_violin()`
+## 3.2.9 Variation of series with `geom_violin()`
 
 ```{r}
 p_rgn_violin <- 
@@ -205,7 +210,7 @@ p_rgn_violin <-
 p_rgn_violin
 ```
 
-# 3.2.10 Change Theme `theme()`
+## 3.2.10 Change Theme `theme()`
 
 ```{r}
 p_rgn_violin +
