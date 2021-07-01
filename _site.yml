@@ -9,5 +9,5 @@ navbar:
     - text: "Manipulate"
       href: manipulate.html
     - text: "Visualize"
-      href: Visualize.html
+      href: visualize.html
 output_dir: "."
