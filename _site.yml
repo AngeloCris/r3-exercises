@@ -5,9 +5,12 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Collaborate"
+      icon: "fa fa-users"
       href: collaborate.html
     - text: "Manipulate"
+      icon: "fas fa-wrench"
       href: manipulate.html
     - text: "Visualize"
+      icon: "fas fa-chart-bar"
       href: visualize.html
 output_dir: "."
