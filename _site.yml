@@ -16,4 +16,8 @@ navbar:
     - text: "Map"
       icon: "fas fa-map"
       href: map.html
+    - text: "Report"
+      icon: "fas fa-chart-book"  
+      href: report.html
+      
 output_dir: "."
