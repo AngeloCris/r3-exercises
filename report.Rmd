@@ -1,0 +1,19 @@
+---
+title: "Report"
+author: "Angelo AC"
+date: "20-07-2021"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    code_folding: "show"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 3.1 Read Data 
+
+# 4.1 Rmd Website
