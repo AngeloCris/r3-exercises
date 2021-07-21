@@ -1,0 +1,77 @@
+---
+title: "Map"
+author: "Angelo AC"
+date: "20-07-2021"
+output: html_document
+---
+
+```{r}
+# Install package
+# require() is like library() except returns FALSE if missing (vs error)
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+
+library(leaflet)
+library(tidyverse)
+# install.packages('Rcpp')
+library(Rcpp)
+library(sf)
+# librarian::shelf() is like library() except installs package if missing, 
+#   even from Github if include owner/repo
+# shelf(
+#   NOAA-EDAB/ecodata,
+#   sf)
+# librarian before version 1.8.1, got error:
+#   download from 'https://api.github.com/repos/NOAA-EDAB/ecodata/tarball/HEAD' failed
+```
+
+# Get Spatial data
+
+```{r}
+ecodata::epu_sf
+```
+
+```{r}
+
+
+epu_sf <- ecodata::epu_sf %>% 
+  st_transform(4326)
+```
+
+```{r}
+class(epu_sf)
+```
+
+```{r}
+# "sf"         "data.frame"
+g1 <- epu_sf$geometry[1]
+# see in Environment pane, expand g1
+```
+
+```{r}
+plot(epu_sf)
+```
+
+```{r}
+plot(epu_sf["EPU"])
+```
+
+```{r}
+shelf(mapview)
+
+mapview(epu_sf)
+```
+
+
+```{r}
+
+shelf(leaflet)
+
+leaflet() %>% 
+  # addTiles() %>% 
+  addProviderTiles(providers$Esri.OceanBasemap) %>% 
+  addPolygons(data = epu_sf)
+```
+
