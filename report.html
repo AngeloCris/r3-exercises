@@ -63,6 +63,28 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 
 
@@ -389,11 +411,101 @@ div.tocify {
 </div>
 
 
-<div id="read-data" class="section level1">
-<h1>3.1 Read Data</h1>
+<pre class="r"><code>knitr::opts_chunk$set(echo = T, warning = F, message = F)
+if (!require(librarian)) {
+  install.packages(&quot;librarian&quot;)
+  library(librarian)
+}</code></pre>
+<pre><code>## Loading required package: librarian</code></pre>
+<pre class="r"><code>shelf(
+  htmltools, mitchelloharawild/icons)</code></pre>
+<pre><code>## 
+##   The &#39;cran_repo&#39; argument in shelf() was not set, so it will use
+##   cran_repo = &#39;https://cran.r-project.org&#39; by default.
+## 
+##   To avoid this message, set the &#39;cran_repo&#39; argument to a CRAN
+##   mirror URL (see https://cran.r-project.org/mirrors.html) or set
+##   &#39;quiet = TRUE&#39;.</code></pre>
+<div id="report" class="section level1">
+<h1>Report</h1>
+<pre class="r"><code>library(citr)
+library(shiny)
+library(bibtex)</code></pre>
+<p>hola como te va <span class="citation">(Ahumada and Queirolo 2014)</span> vamos por otro lado <span class="citation">(Afonso et al. 2009)</span></p>
 </div>
-<div id="rmd-website" class="section level1">
-<h1>4.1 Rmd Website</h1>
+<div id="bibliografía" class="section level1">
+<h1>Bibliografía</h1>
+</div>
+<div id="report-1" class="section level1">
+<h1>Report</h1>
+<div id="learning-objectives" class="section level2 unnumbered objectives">
+<h2 class="unnumbered objectives">Learning Objectives</h2>
+<p>Dive into Rmarkdown for for knitting formatted text (markdown) with chunks of evaluated R code into html, pdf and docx formats. Use Rmarkdown for single page reports, bookdown for reports with chapters, flexdashboard for dashboards and Rmarkdown websites for simple websites with shared navigation. Automatically render with Github Actions.</p>
+<ul>
+<li>Rmarkdown basics
+<ul>
+<li>YAML as frontmatter of Rmd, <code>_site.yml</code> for <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">Rmd website</a></li>
+<li>Rmarkdown Cheatsheets</li>
+<li>RStudio’s Visual Markdown Editor</li>
+<li>R code as chunks or inline</li>
+<li>Navigate: toc sidebar, chunk dropdown, knit gear options, insert chunk</li>
+<li>Equations</li>
+<li>Tables</li>
+<li>References with <a href="https://github.com/crsh/citr">citr</a></li>
+<li>pandoc: docx for track changes editing, pdf (tinytex) for archive</li>
+<li>html options: toc floating, code hide/show</li>
+<li><a href="https://rstudio.github.io/bslib/">bslib</a></li>
+</ul></li>
+<li>Product <a href="https://rmarkdown.rstudio.com/formats.html">formats</a>
+<ul>
+<li><a href="https://bbest.github.io/r3-exercises/report-website/"><strong>website</strong></a>
+<ul>
+<li>source: <a href="https://github.com/bbest/r3-exercises/tree/main/report-website">report-website</a></li>
+<li>format: <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html">Rmd website</a></li>
+<li>techniques:
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/params-declare.html">Parameterized reports</a></li>
+<li><a href="https://github.com/r-lib/actions/tree/master/examples">Render automatically with Github Action</a></li>
+</ul></li>
+</ul></li>
+<li><a href="https://bbest.github.io/r3-exercises/report-dashboard/"><strong>dashboard</strong></a>
+<ul>
+<li>source: <a href="https://github.com/bbest/r3-exercises/tree/main/report-dashboard">report-website</a></li>
+<li>format: <a href="https://pkgs.rstudio.com/flexdashboard/"><code>flexdashboard</code></a></li>
+<li>technique: <a href="https://bookdown.org/yihui/rmarkdown-cookbook/knit-expand.html"><code>knitr::knit_expand()</code></a></li>
+</ul></li>
+<li><a href="https://bbest.github.io/r3-exercises/report-book/"><strong>book</strong></a>
+<ul>
+<li>source: <a href="https://github.com/bbest/r3-exercises/tree/main/report-book">report-book</a></li>
+<li>format: <a href="https://bookdown.org"><code>bookdown</code></a></li>
+</ul></li>
+<li><a href="https://bbest.github.io/r3-exercises/report-slides.html"><strong>slides</strong></a>
+<ul>
+<li>source: <a href="https://github.com/bbest/r3-exercises/blob/main/report-slides.Rmd">report-slides.Rmd</a></li>
+<li>format: <a href="https://bookdown.org/yihui/rmarkdown/xaringan-format.html"><code>xaringan</code></a></li>
+</ul></li>
+<li><a href="https://bbest.github.io/r3-exercises/report-article/report-article.pdf"><strong>article</strong></a>
+<ul>
+<li>source: <a href="https://github.com/bbest/r3-exercises/tree/main/report-article">report-article</a></li>
+<li>format: <a href="https://bookdown.org/yihui/rmarkdown/journals.html"><code>rticles</code></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="rmd-website" class="section level2">
+<h2>Rmd Website</h2>
+</div>
+<div id="source" class="section level2 unnumbered">
+<h2 class="unnumbered">Source:</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-afonsoMultiscalePatternsHabitat2009" class="csl-entry">
+Afonso, P, J Fontes, Kn Holland, and Rs Santos. 2009. <span>“Multi-Scale Patterns of Habitat Use in a Highly Mobile Reef Fish, the White Trevally <span>Pseudocaranx</span> Dentex, and Their Implications for Marine Reserve Design.”</span> <em>Marine Ecology Progress Series</em> 381 (April): 273–86. <a href="https://doi.org/10.3354/meps07946">https://doi.org/10.3354/meps07946</a>.
+</div>
+<div id="ref-ahumadaExplotacionPecesAsociada2014" class="csl-entry">
+Ahumada, Mauricio, and Dante Queirolo. 2014. <span>“Explotacion de peces asociada a la pesqueria artesanal de langosta de Juan Fernandez (Jasus frontalis).”</span> <em>Latin American Journal of Aquatic Research</em> 42 (1): 213–23. <a href="https://doi.org/10.3856/vol42-issue1-fulltext-18">https://doi.org/10.3856/vol42-issue1-fulltext-18</a>.
+</div>
+</div>
+</div>
 </div>
 
 
